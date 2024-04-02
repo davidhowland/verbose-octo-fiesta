@@ -1,5 +1,7 @@
 ---
 title: Airport Rock Loop
+parent: Airport Trailhead
+grand_parent: West Barnstable Conservation Area
 layout: route
 footpath-id: e0db21b0-53af-413a-8960-334f063c6a34
 distance: 3.7
