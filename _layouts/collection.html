@@ -1,0 +1,15 @@
+---
+layout: default
+---
+{{ page.content }}
+
+<div id="map" style="width: 100%; height: 500px;"></div>
+
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoiY2FwZWNvZHRyYWlscnVubmluZyIsImEiOiJjanl4bWVoa3QwYTZjM21wazN0NjI3eXRuIn0.0YojqfhJv1QK-3IQVktbIQ';
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        center: [-74.5, 40], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
+</script>
