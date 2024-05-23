@@ -18,9 +18,9 @@ collections:
 
 just_the_docs:
   collections:
-    networks:
+    towns:
       # Give the collection a name
-      name: Cape Cod Trail Networks
+      name: Towns
       # Exclude the collection from the navigation
       # Supports true or false (default)
       # nav_exclude: true
