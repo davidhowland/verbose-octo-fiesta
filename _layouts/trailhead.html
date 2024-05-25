@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<div id="map"></div>
+
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoiY2FwZWNvZHRyYWlscnVubmluZyIsImEiOiJjanl4bWVoa3QwYTZjM21wazN0NjI3eXRuIn0.0YojqfhJv1QK-3IQVktbIQ';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: 'mapbox://styles/capecodtrailrunning/clwjdfr1y02q901qlcu0u4i5i',
+        center: [12.550343, 55.665957],
+        zoom: 8
+    });
+
+    // Create a default Marker and add it to the map.
+    const marker1 = new mapboxgl.Marker()
+        .setLngLat([12.554729, 55.70651])
+        .addTo(map);
+</script>
