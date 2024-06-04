@@ -1,16 +1,26 @@
 ---
 layout: default
 ---
-<div id='map' style='width: 400px; height: 300px;'></div>
+<div id='map' style='width: 100%; height: 400px;'></div>
 
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiY2FwZWNvZHRyYWlscnVubmluZyIsImEiOiJjbHgwc3pldGcwNDV6MmpxN3JtY3RjZTdhIn0.Xh5g0TNKifNbui-Nk2btGw';
     const map = new mapboxgl.Map({
         container: 'map', 
         style: 'mapbox://styles/capecodtrailrunning/clwjdfr1y02q901qlcu0u4i5i',
-        center: [-74.5, 40], 
-        zoom: 9, 
+        center: [{{ page.lat }}, {{ page.lng }}], 
+        zoom: 16, 
     });
+
+    const nav = new mapboxgl.NavigationControl({
+        showCompass: false
+    });
+
+    map.addControl(nav);
+
+    const marker1 = new mapboxgl.Marker({ color: 'black'})
+        .setLngLat([{{ page.lat }}, {{ page.lng }}])
+        .addTo(map);
 </script>
 
 {{ content }}
