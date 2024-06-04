@@ -1,5 +1,5 @@
 ---
-title: Service Rd - Maple Swamp
+title: Maple Swamp - Service Road
 layout: trailhead
 town: sandwich
 lat: -70.43699
