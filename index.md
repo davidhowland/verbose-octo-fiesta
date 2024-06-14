@@ -21,11 +21,63 @@ Cape Cod Trail Running is a guide to running and biking on the extensive trail n
 
     map.addControl(nav);
 
-    {% for trailhead in site.trailheads %}
-        const marker1 = new mapboxgl.Marker({ color: 'black'})
-            .setLngLat([{{ trailhead.lat }}, {{ trailhead.lng }}])
-            .addTo(map);
-    {% endfor %}
+    map.on('load', () => {
+        map.addSource('places', {
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': [
+                    {% for trailhead in site.trailheads %}
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '{{ trailhead.description }}',
+                            'icon': 'theatre'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [{{ trailhead.lat }}, {{ trailhead.lng }}]
+                        }
+                    },
+                    {% endfor %}
+                ]
+            }
+        });
+        map.addLayer({
+            'id': 'places',
+            'type': 'symbol',
+            'source': 'places',
+            'layout': {
+                'icon-image': 'park',
+                'icon-allow-overlap': true
+            }
+        });
+
+        map.on('click', 'places', (e) => {
+            const coordinates = e.features[0].geometry.coordinates.slice();
+            const description = e.features[0].properties.description;
+
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+            new mapboxgl.Popup()
+                .setLngLat(coordinates)
+                .setHTML(description)
+                .addTo(map);
+        });
+
+        map.on('mouseenter', 'places', () => {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        map.on('mouseleave', 'places', () => {
+            map.getCanvas().style.cursor = '';
+        });
+
+    });
+
 </script>
 
 Use the map above to browse trailheads and view a list of routes for each trailhead. The menu bar has a list of trailheads by town. Below is a table of routes that you can sort by distance.
