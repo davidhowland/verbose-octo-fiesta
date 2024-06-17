@@ -29,8 +29,17 @@ layout: default
 
 {% assign trailhead_routes = site.routes | where:'trailhead', page.slug %}
 
-{% for route in trailhead_routes %}
-
-{{ route.title }}
-
-{% endfor %}
+<table>
+    <tr>
+        <th>Route</th>
+        <th>Distance</th>
+        <th>Elevation Gain</th>
+    </tr>
+    {% for route in trailhead_routes %}
+    <tr>
+        <td><a href="{{ route.url }}">{{ route.title }}</a></td>
+        <td>{{ route.distance }} miles</td>
+        <td>{{ route.elevation-gain }} feet</td>
+    </tr>
+    {% endfor %}  
+</table>
