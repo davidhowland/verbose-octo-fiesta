@@ -26,3 +26,11 @@ layout: default
 </script>
 
 {{ content }}
+
+{% assign trailhead_routes = site.routes | where:'trailhead', page.slug %}
+
+{% for route in trailhead_routes %}
+
+{{ route.title }}
+
+{% endfor %}
