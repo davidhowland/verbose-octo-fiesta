@@ -3,10 +3,11 @@ layout: default
 ---
 <h1>{{ page.title }}</h1>
 <p>
-    <b>Distance</b>: {{ page.distance }}
-</p>
-<p>
-    <b>Elevation Gain</b>: {{ page.elevation }}
+    <b>Distance</b>: {{ page.distance }} miles
+</br>
+    <b>Elevation Gain</b>: {{ page.elevation-gain }} feet
+</br>
+    <b>Route Download: <a href="/downloads/{{ page.slug }}.gpx">{{ page.slug }}.gpx</a></b>
 </p>
 <div id='map' style='width: 100%; height: 550px;'>
     <iframe width="100%" height="100%" src="https://footpathapp.com/routes/{{ page.footpath-id }}?embed=1"></iframe>
