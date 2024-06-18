@@ -27,7 +27,7 @@ layout: default
 
 {{ content }}
 
-{% assign trailhead_routes = site.routes | where:'trailhead', page.slug %}
+{% assign trailhead_routes = site.trailheads | where: 'parent', page.title |where:'layout', "route" %}
 
 <table>
     <tr>

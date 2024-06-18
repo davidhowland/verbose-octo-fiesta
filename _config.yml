@@ -18,9 +18,6 @@ collections:
   trailheads:
     permalink: "/:collection/:path/"
     output: true
-  routes:
-    permalink: "/:collection/:path/"
-    output: true
 
 just_the_docs:
   collections:
@@ -39,18 +36,6 @@ just_the_docs:
     trailheads:
       # Give the collection a name
       name: Trailheads
-      # Exclude the collection from the navigation
-      # Supports true or false (default)
-      # nav_exclude: true
-      # Fold the collection in the navigation
-      # Supports true or false (default)
-      # nav_fold: true  # note: this option is new in v0.4
-      # Exclude the collection from the search
-      # Supports true or false (default)
-      # search_exclude: true
-    towns:
-      # Give the collection a name
-      name: Routes
       # Exclude the collection from the navigation
       # Supports true or false (default)
       # nav_exclude: true
