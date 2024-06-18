@@ -8,4 +8,4 @@ map-link: https://www.google.com/maps/place/Maple+Swamp/@41.7252203,-70.4381204,
 lat: -70.43699
 lng: 41.72476
 ---
-Text about Maple Swamp Service Road Trailhead.
+The Service Road trailhead for the Maple Swamp Conservation Area is a large dirt lot located right off of the Service Road in Sandwich. This is the main trailhead for Maple Swamp and has access to a large variety of trails and routes.
