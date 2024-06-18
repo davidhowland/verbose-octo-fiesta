@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{{ page.content }}
+<h2>{{ page.title }}</h2>
 
 <div id='map' style='margin-top: 16px; width: 100%; height: 500px;'></div>
 
@@ -20,9 +20,61 @@ layout: default
 
     map.addControl(nav);
 
-    {% for trailhead in site.trailheads %}
-        const marker1 = new mapboxgl.Marker({ color: 'black'})
-            .setLngLat([{{ trailhead.lat }}, {{ trailhead.lng }}])
-            .addTo(map);
-    {% endfor %}
+    map.on('load', () => {
+        map.addSource('places', {
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': [
+                    {% for trailhead in site.trailheads | where:'town',"sandwich" %}
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<b>{{ trailhead.title }}</b><br>{{ trailhead.address }} (<a href="{{ trailhead.map-link }}">Directions</a>)',
+                            'icon': 'theatre'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [{{ trailhead.lat }}, {{ trailhead.lng }}]
+                        }
+                    },
+                    {% endfor %}
+                ]
+            }
+        });
+        map.addLayer({
+            'id': 'places',
+            'type': 'symbol',
+            'source': 'places',
+            'layout': {
+                'icon-image': 'park',
+                'icon-allow-overlap': true
+            }
+        });
+
+        map.on('click', 'places', (e) => {
+            const coordinates = e.features[0].geometry.coordinates.slice();
+            const description = e.features[0].properties.description;
+
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+            new mapboxgl.Popup()
+                .setLngLat(coordinates)
+                .setHTML(description)
+                .addTo(map);
+        });
+
+        map.on('mouseenter', 'places', () => {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        map.on('mouseleave', 'places', () => {
+            map.getCanvas().style.cursor = '';
+        });
+
+    });
+
 </script>
