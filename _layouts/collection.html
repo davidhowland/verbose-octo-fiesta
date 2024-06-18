@@ -1,8 +1,7 @@
 ---
-title: Home
-layout: home
+layout: default
 ---
-Cape Cod Trail Running is a guide to running and biking on the extensive trail networks of Cape Cod. Most people don't think of the Cape when they think of a place to go trail running or mountain biking but we have more than 1000 miles of trails covering all types of terrain and landscapes.
+<h2>{{ page.title }}</h2>
 
 <div id='map' style='margin-top: 16px; width: 100%; height: 500px;'></div>
 
@@ -27,12 +26,13 @@ Cape Cod Trail Running is a guide to running and biking on the extensive trail n
             'data': {
                 'type': 'FeatureCollection',
                 'features': [
-                    {% for trailhead in site.trailheads %}
+                    {% assign trailheads = site.trailheads | where: 'town', page.slug %}
+                    {% for trailhead in trailheads %}
                     {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                                '<b>{{ trailhead.title }}</b><br>{{ trailhead.town | capitalize }}, MA (<a href="{{ trailhead.map-link }}">Directions</a>)',
+                                '<b>{{ trailhead.title }}</b><br>{{ trailhead.address }} (<a href="{{ trailhead.map-link }}">Directions</a>)',
                             'icon': 'theatre'
                         },
                         'geometry': {
@@ -80,4 +80,23 @@ Cape Cod Trail Running is a guide to running and biking on the extensive trail n
 
 </script>
 
-Use the map above to browse trailheads and view a list of routes for each trailhead. The menu bar has a list of trailheads by town. Below is a table of routes that you can sort by distance.
+{{ content }}
+
+{% assign town_routes = site.trailheads | where: 'town', page.slug | where:'layout', "route" %}
+
+<table>
+    <tr>
+        <th>Route</th>
+        <th>Trailhead</th>
+        <th>Distance</th>
+        <th>Elevation Gain</th>
+    </tr>
+    {% for route in town_routes %}
+    <tr>
+        <td><a href="{{ route.url }}">{{ route.title }}</a></td>
+        <td><a href="/trailheads/{{ route.trailhead }}/index/">{{ route.parent }}</a></td>
+        <td>{{ route.distance }} miles</td>
+        <td>{{ route.elevation-gain }} feet</td>
+    </tr>
+    {% endfor %}  
+</table>

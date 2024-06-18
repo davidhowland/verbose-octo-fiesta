@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<h2>{{ page.title }}</h2>
+
+<div id='map' style='margin-top: 16px; width: 100%; height: 400px;'></div>
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2FwZWNvZHRyYWlscnVubmluZyIsImEiOiJjbHgwc3pldGcwNDV6MmpxN3JtY3RjZTdhIn0.Xh5g0TNKifNbui-Nk2btGw';
+    const map = new mapboxgl.Map({
+        container: 'map', 
+        style: 'mapbox://styles/capecodtrailrunning/clwjdfr1y02q901qlcu0u4i5i',
+        center: [{{ page.lat }}, {{ page.lng }}], 
+        zoom: 16, 
+    });
+
+    const nav = new mapboxgl.NavigationControl({
+        showCompass: false
+    });
+
+    map.addControl(nav);
+
+    const marker1 = new mapboxgl.Marker({ color: 'black'})
+        .setLngLat([{{ page.lat }}, {{ page.lng }}])
+        .addTo(map);
+</script>
+
+{{ content }}
+
+{% assign trailhead_routes = site.trailheads | where: 'parent', page.title | where:'layout', "route" %}
+
+<table>
+    <tr>
+        <th>Route</th>
+        <th>Distance</th>
+        <th>Elevation Gain</th>
+    </tr>
+    {% for route in trailhead_routes %}
+    <tr>
+        <td><a href="{{ route.url }}">{{ route.title }}</a></td>
+        <td>{{ route.distance }} miles</td>
+        <td>{{ route.elevation-gain }} feet</td>
+    </tr>
+    {% endfor %}  
+</table>
