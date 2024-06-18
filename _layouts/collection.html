@@ -80,17 +80,21 @@ layout: default
 
 </script>
 
-{% assign trailhead_routes = site.trailheads | where: 'parent', page.title | where:'layout', "route" %}
+{{ content }}
+
+{% assign town_routes = site.trailheads | where: 'town', page.slug | where:'layout', "route" %}
 
 <table>
     <tr>
         <th>Route</th>
+        <th>Trailhead</th>
         <th>Distance</th>
         <th>Elevation Gain</th>
     </tr>
-    {% for route in trailhead_routes %}
+    {% for route in town_routes %}
     <tr>
         <td><a href="{{ route.url }}">{{ route.title }}</a></td>
+        <td><a href="/trailheads/{{ route.trailhead }}/index/">{{ route.parent }}</a></td>
         <td>{{ route.distance }} miles</td>
         <td>{{ route.elevation-gain }} feet</td>
     </tr>
