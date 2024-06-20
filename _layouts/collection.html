@@ -82,7 +82,7 @@ layout: default
 
 {{ content }}
 
-{% assign town_routes = site.trailheads | where: 'town', page.slug | where:'layout', "route" %}
+{% assign town_routes = site.trailheads | where: 'town', page.slug | where:'layout', "route" | sort: 'distance' %}
 
 <table>
     <tr>
