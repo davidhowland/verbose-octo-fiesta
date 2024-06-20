@@ -1,6 +1,7 @@
 ---
 title: Home
 layout: home
+nav_order: 1
 ---
 Cape Cod Trail Running is a guide to running and biking on the extensive trail networks of Cape Cod. Most people don't think of the Cape when they think of a place to go trail running or mountain biking but we have more than 1000 miles of trails covering all types of terrain and landscapes.
 
