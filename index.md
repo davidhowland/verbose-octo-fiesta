@@ -81,4 +81,25 @@ Cape Cod Trail Running is a guide to running and biking on the extensive trail n
 
 </script>
 
-Use the map above to browse trailheads and view a list of routes for each trailhead. The menu bar has a list of trailheads by town. Below is a table of routes that you can sort by distance.
+Use the map above to browse trailheads and view a list of routes for each trailhead. The menu bar has a list of trailheads by town. Below is a table of routes sorted by distance.
+
+{% assign all_routes = site.trailheads | where:'layout', "route" | sort: 'distance' %}
+
+<table>
+    <tr>
+        <th>Route</th>
+        <th>Trailhead</th>
+        <th>Town</th>
+        <th>Distance</th>
+        <th>Elevation Gain</th>
+    </tr>
+    {% for route in all_routes %}
+    <tr>
+        <td><a href="{{ route.url }}">{{ route.title }}</a></td>
+        <td><a href="/trailheads/{{ route.trailhead }}/index/">{{ route.parent }}</a></td>
+        <td><a href="/towns/{{ route.town }}">{{ route.town | capitalize }}</a></td>
+        <td>{{ route.distance }} miles</td>
+        <td>{{ route.elevation-gain }} feet</td>
+    </tr>
+    {% endfor %}  
+</table>
