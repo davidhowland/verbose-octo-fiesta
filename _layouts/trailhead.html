@@ -10,7 +10,7 @@ layout: default
     const map = new mapboxgl.Map({
         container: 'map', 
         style: 'mapbox://styles/capecodtrailrunning/clwjdfr1y02q901qlcu0u4i5i',
-        center: [{{ page.lat }}, {{ page.lng }}], 
+        center: [{{ page.lng }}, {{ page.lat }}], 
         zoom: 16, 
     });
 
@@ -21,7 +21,7 @@ layout: default
     map.addControl(nav);
 
     const marker1 = new mapboxgl.Marker({ color: 'black'})
-        .setLngLat([{{ page.lat }}, {{ page.lng }}])
+        .setLngLat([{{ page.lng }}, {{ page.lat }}])
         .addTo(map);
 </script>
 

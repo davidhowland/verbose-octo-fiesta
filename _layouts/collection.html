@@ -37,12 +37,11 @@ layout: default
                         'type': 'Feature',
                         'properties': {
                             'description':
-                                '<b>{{ trailhead.title }}</b><br>{{ trailhead.address }} (<a href="{{ trailhead.map-link }}">Directions</a>)',
-                            'icon': 'theatre'
+                                '<b>{{ trailhead.title }}</b><br>{{ trailhead.address }}(<a href="https://www.google.com/maps/search/?api=1&query={{ page.lat }},{{ page.lng }}">Directions</a>)'
                         },
                         'geometry': {
                             'type': 'Point',
-                            'coordinates': [{{ trailhead.lat }}, {{ trailhead.lng }}]
+                            'coordinates': [{{ trailhead.lng }}, {{ trailhead.lat }}]
                         }
                     },
                     {% endfor %}
