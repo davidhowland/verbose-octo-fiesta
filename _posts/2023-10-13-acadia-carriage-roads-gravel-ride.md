@@ -1,5 +1,6 @@
 ---
 title: Acadia Carriage Roads Gravel Ride
-layout: default
+layout: post
+published: false
 ---
 text
