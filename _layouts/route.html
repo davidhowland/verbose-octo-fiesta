@@ -6,6 +6,16 @@ layout: default
     A <b>{{ page.distance }} mile</b> route with <b>{{ page.elevation-gain }} feet</b> of climbing.
 </br>
     <b>Route Download: <a href="/downloads/{{ page.slug }}.gpx">{{ page.slug }}.gpx</a></b>
+</br>
+    <b>Segments</b>: 
+        {% for segment in site.data.segments %}
+        {% for route-segments in page.segments %}
+        {% if route-segments contains segment %}
+        {{ segment.name }}
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+
 </p>
 <div style="width: 100%; height: 550px;"><iframe src="https://footpathapp.com/routes/{{ page.footpath-id }}?embed=1" width="100%" height="100%" frameborder="0"></iframe></div>
 {{ content }}
