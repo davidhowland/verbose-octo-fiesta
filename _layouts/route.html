@@ -3,11 +3,21 @@ layout: default
 ---
 <h2>{{ page.title }}</h2>
 <p>
-    <b>Distance</b>: {{ page.distance }} miles
-</br>
-    <b>Elevation Gain</b>: {{ page.elevation-gain }} feet
+    A <b>{{ page.distance }} mile</b> route with <b>{{ page.elevation-gain }} feet</b> of climbing.
 </br>
     <b>Route Download: <a href="/downloads/{{ page.slug }}.gpx">{{ page.slug }}.gpx</a></b>
+</br>
+    <b>Segments</b>: 
+        {% assign segments = page.segments %}
+
+        {% for segment in segments %}
+
+        {% assign route-segments = site.data.segments[segment] %}
+
+        <a target="_blank" href="{{ route-segments.link }}">{{ route-segments.name }}</a>
+
+        {% endfor %}
+
 </p>
 <div style="width: 100%; height: 550px;"><iframe src="https://footpathapp.com/routes/{{ page.footpath-id }}?embed=1" width="100%" height="100%" frameborder="0"></iframe></div>
 {{ content }}
