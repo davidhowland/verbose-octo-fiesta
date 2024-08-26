@@ -3,4 +3,27 @@ conspiracy-climb:
   link: https://www.strava.com/segments/33613452
   tags:
     - hilly
-    - maple swamp
+
+boardwalk-bumps:
+  name: Boardwalk Bumps
+  link: https://www.strava.com/segments/28745185
+
+did-a-tick-make-this-trail:
+  name: Did a Tick Make This Trail?
+  link: https://www.strava.com/segments/31833232
+
+ladder-to-lookout:
+  name: Ladder to Lookout
+  link: https://www.strava.com/segments/33274767
+  tags:
+    - hilly
+
+osterville-isthmus:
+  name: Osterville Isthmus
+  link: https://www.strava.com/segments/33151627
+
+ramp-up:
+  name: Ramp Up
+  link: https://www.strava.com/segments/31546392
+  tags:
+    - hilly
