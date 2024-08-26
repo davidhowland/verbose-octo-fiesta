@@ -1,36 +1,5 @@
-conspiracy-climb:
-  name: Conspiracy Climb
+- name: Conspiracy Climb
   link: https://www.strava.com/segments/33613452
   tags:
     - hilly
     - maple swamp
-
-did-a-tick-make-this-trail:
-  name: Did a Tick Make This Trail?
-  link: https://www.strava.com/segments/31833232
-  tags:
-    - old jail lane
-
-down-ladder:
-  name: Down Ladder
-  link: https://www.strava.com/segments/33613459
-  tags:
-    - maple swamp
-
-farm-to-table:
-  name: Farm to Table
-  link: https://www.strava.com/segments/31366245
-  tags:
-    - old jail lane
-
-farm-to-tray-ble:
-  name: Farm to Tray-ble
-  link: https://www.strava.com/segments/29662953
-  tags:
-    - old jail lane
-
-hard-start:
-  name: Hard Start
-  link: https://www.strava.com/segments/34660237
-  tags:
-    - wbca
