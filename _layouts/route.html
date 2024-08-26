@@ -8,11 +8,14 @@ layout: default
     <b>Route Download: <a href="/downloads/{{ page.slug }}.gpx">{{ page.slug }}.gpx</a></b>
 </br>
     <b>Segments</b>: 
-        {% for segment in page.segments %}
-            {% if site.data.segments contains segment %}
-                {% assign route_segment = site.data.segments[segment] %}
-                {{ route_segment.name }}
-            {% endif %}
+        {% assign segments = page.segments %}
+
+        {% for segment in segments %}
+
+        {% assign route-segments = site.data.segments[segment] %}
+
+        <a target="_blank" href="{{ route-segments.link }}">{{ route-segments.name }}</a>
+
         {% endfor %}
 
 </p>
