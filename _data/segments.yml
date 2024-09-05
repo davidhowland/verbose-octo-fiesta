@@ -27,3 +27,15 @@ ramp-up:
   link: https://www.strava.com/segments/31546392
   tags:
     - hilly
+
+popplebottom-flats:
+  name: Popplebottom Flats
+  link: https://www.strava.com/segments/37695999
+  tags:
+    - flat
+
+popplebottom-home:
+  name: Popplebottom Home
+  link: https://www.strava.com/segments/37695976
+  tags:
+    - flat
