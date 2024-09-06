@@ -33,12 +33,12 @@ Cape Cod Trail Running is a guide to running and biking on the extensive trail n
                         'type': 'Feature',
                         'properties': {
                             'description':
-                                '<b>{{ trailhead.title }}</b><br>{{ trailhead.town | capitalize }}, MA (<a href="{{ trailhead.map-link }}">Directions</a>)',
+                                '<b>{{ trailhead.title }}</b><br>{{ trailhead.town | capitalize }}, MA (<a target="_blank" href="{{ trailhead.map-link }}">Directions</a>)',
                             'icon': 'theatre'
                         },
                         'geometry': {
                             'type': 'Point',
-                            'coordinates': [{{ trailhead.lat }}, {{ trailhead.lng }}]
+                            'coordinates': [{{ trailhead.lng }}, {{ trailhead.lat }}]
                         }
                     },
                     {% endfor %}

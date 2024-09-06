@@ -14,7 +14,7 @@ layout: default
 
         {% assign route-segments = site.data.segments[segment] %}
 
-        <a target="_blank" href="{{ route-segments.link }}">{{ route-segments.name }}</a>
+        <a target="_blank" href="{{ route-segments.link }}">{{ route-segments.name }}</a>{% if forloop.last == false %}, {% endif %}
 
         {% endfor %}
 
