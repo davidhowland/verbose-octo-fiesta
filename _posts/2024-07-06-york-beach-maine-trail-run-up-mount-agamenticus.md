@@ -1,7 +1,7 @@
 ---
 title: York Beach Maine Trail Run up Mount Agamenticus
 layout: post
-parent: blog
+parent: Blog
 ---
 Every year my family goes on a vacation to York Beach in southern Maine. I’ve enjoyed running along the beach and around Cape Neddick for years (route link) but I was a bit flummoxed when I switched over to trail running. The area seems like it should be very flat and it’s densely developed to support the summer vacation crowds. However, on a road bike ride I found the Mount Agamenticus area thanks to the steep, paved summit road. It turns out the area is full of great running and biking trails as well! Agamenticus.org has a [great trail map](https://agamenticus.org/wp-content/uploads/2018/01/MT.A-MAP.pdf). This year I ran a little over four miles up and down two tough hills in a forest that felt a long way from the sand and waves of the York Beach area.
 
