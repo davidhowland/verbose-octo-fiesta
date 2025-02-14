@@ -18,6 +18,9 @@ collections:
   trailheads:
     permalink: "/:collection/:path/"
     output: true
+  posts:
+    output: true
+  
 
 just_the_docs:
   collections:
@@ -45,3 +48,5 @@ just_the_docs:
       # Exclude the collection from the search
       # Supports true or false (default)
       # search_exclude: true
+    posts: 
+      name: Posts
