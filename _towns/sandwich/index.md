@@ -1,7 +1,8 @@
 ---
 title: Trail Running in Sandwich, MA
 layout: collection
-layout: /sandwich/
+town: sandwich
+permalink: /sandwich/
 has_toc: false
 nav_order: 2
 lat: -70.4658

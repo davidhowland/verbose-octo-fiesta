@@ -3,7 +3,6 @@ title: Maple Swamp - Service Road
 layout: trailhead
 has_children: true
 has_toc: false
-town: sandwich
 parent: Trail Running in Sandwich, MA
 map-link: https://maps.app.goo.gl/GqyWGf41h4ezTNic6
 lat: 41.72476
