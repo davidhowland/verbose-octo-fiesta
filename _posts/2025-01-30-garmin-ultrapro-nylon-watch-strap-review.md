@@ -1,6 +1,7 @@
 ---
 title: Garmin UltraFit Nylon Band Review - Finally a Sport Loop for the Forerunner 955
 layout: post
+parent: Blog
 ---
 I switched from an Apple Watch to a Garmin Forerunner 955 last year and kept getting a small rash under the stock silicone band. When Garmin released their UltraFit Nylon band in spring, I bought it to hopefully solve this problem.
 
