@@ -4,6 +4,7 @@ layout: trailhead
 has_children: true
 has_toc: false
 town: barnstable
+parent: Trail Running in Barnstable, MA
 map-link: https://www.google.com/maps/place/MMVP%2BXXX,+Barnstable,+MA/
 lat: 41.69495
 lng: -70.31253

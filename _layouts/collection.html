@@ -31,7 +31,7 @@ layout: default
             'data': {
                 'type': 'FeatureCollection',
                 'features': [
-                    {% assign trailheads = site.trailheads | where: 'town', page.slug %}
+                    {% assign trailheads = site.towns | where: 'town', page.id %}
                     {% for trailhead in trailheads %}
                     {
                         'type': 'Feature',
