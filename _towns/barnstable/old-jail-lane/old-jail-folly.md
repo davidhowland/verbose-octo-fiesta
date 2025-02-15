@@ -3,7 +3,7 @@ title: Old Jail Folly
 layout: route
 parent: Old Jail Lane
 footpath-id: 6BAF8479-FFD6-4DC5-94C9-D219EB58EB66
-town: Barnstable
+town: barnstable
 trailhead: old-jail-lane
 distance: 4.33
 elevation-gain: 309
