@@ -14,7 +14,6 @@ collections:
   towns:
     permalink: "/:path/"
     output: true
-  
 
 just_the_docs:
   collections:

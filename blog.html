@@ -1,10 +1,8 @@
 ---
-title: Posts
+title: Blog
 layout: default
-permalink /posts/
 has_children: true
 ---
-
 {% for post in site.posts %}
     <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
     <h4>{{ post.date | date: "%-d %B %Y" }}</h4>
