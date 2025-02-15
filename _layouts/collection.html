@@ -98,7 +98,7 @@ layout: default
     {% for route in town_routes %}
     <tr>
         <td><a href="{{ route.url }}">{{ route.title }}</a></td>
-        <td><a href="{{ route.town }}{{ route.trailhead }}/">{{ route.parent }}</a></td>
+        <td><a href="{{ route.trailhead }}/">{{ route.parent }}</a></td>
         <td>{{ route.distance }} miles</td>
         <td>{{ route.elevation-gain }} feet</td>
     </tr>
