@@ -31,7 +31,7 @@ layout: default
             'data': {
                 'type': 'FeatureCollection',
                 'features': [
-                    {% assign trailheads = site.trailheads | where: 'town', page.slug %}
+                    {% assign trailheads = site.towns | where: "layout","trailhead" | where: "parent", page.title %}
                     {% for trailhead in trailheads %}
                     {
                         'type': 'Feature',
@@ -86,7 +86,7 @@ layout: default
 
 {{ content }}
 
-{% assign town_routes = site.trailheads | where: 'town', page.slug | where:'layout', "route" | sort: 'distance' %}
+{% assign town_routes = site.towns | where: 'permalink', page.town | where:'layout', "route" | sort: 'distance' %}
 
 <table>
     <tr>
@@ -98,7 +98,7 @@ layout: default
     {% for route in town_routes %}
     <tr>
         <td><a href="{{ route.url }}">{{ route.title }}</a></td>
-        <td><a href="/trailheads/{{ route.trailhead }}/index/">{{ route.parent }}</a></td>
+        <td><a href="{{ route.trailhead }}/">{{ route.parent }}</a></td>
         <td>{{ route.distance }} miles</td>
         <td>{{ route.elevation-gain }} feet</td>
     </tr>

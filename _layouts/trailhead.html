@@ -27,7 +27,7 @@ layout: default
 
 {{ content }}
 
-{% assign trailhead_routes = site.trailheads | where: 'parent', page.title | where:'layout', "route" | sort: 'distance' %}
+{% assign trailhead_routes = site.towns | where: 'parent', page.title | where:'layout', "route" | sort: 'distance' %}
 
 <table>
     <tr>
