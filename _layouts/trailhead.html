@@ -11,7 +11,12 @@ layout: default
         container: 'map', 
         style: 'mapbox://styles/capecodtrailrunning/clwjdfr1y02q901qlcu0u4i5i',
         center: [{{ page.lng }}, {{ page.lat }}], 
-        zoom: 16, 
+        zoom: 
+            {% if page.zoom %}
+                {{ page.zoom }}
+            {% else %}
+                16,
+            {% endif %} 
     });
 
     const nav = new mapboxgl.NavigationControl({
