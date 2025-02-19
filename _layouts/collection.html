@@ -86,7 +86,7 @@ layout: default
 
 {{ content }}
 
-{% assign town_routes = site.towns | where: 'permalink', page.town | where:'layout', "route" | sort: 'distance' %}
+{% assign town_routes = site.towns | where:'layout', "route" | where:'town', page.slug | sort: 'distance' %}
 
 <table>
     <tr>
