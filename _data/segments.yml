@@ -39,3 +39,13 @@ popplebottom-home:
   link: https://www.strava.com/segments/37695976
   tags:
     - flat
+
+long-pond-back-hills:
+  name: Long Pond Back Hills
+  link: https://www.strava.com/segments/6432259
+  tags:
+    - hilly
+
+first-half-of-long-pond:
+  name: First Half of Long Pond CCW
+  link: https://www.strava.com/segments/37673265
