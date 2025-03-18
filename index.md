@@ -34,8 +34,7 @@ Cape Cod Trail Running is a guide to running and biking on the extensive trail n
                         'type': 'Feature',
                         'properties': {
                             'description':
-                                '<b>{{ trailhead.title }}</b><br><a target="_blank" href="{{ trailhead.map-link }}">Directions<a>',
-                            'icon': 'theatre'
+                                '<b><a href="{{ trailhead.url }}">{{ trailhead.title }}</a></b><br>{{ trailhead.address }}(<a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ trailhead.lat }},{{ trailhead.lng }}">Directions</a>)'
                         },
                         'geometry': {
                             'type': 'Point',
@@ -51,7 +50,8 @@ Cape Cod Trail Running is a guide to running and biking on the extensive trail n
             'type': 'symbol',
             'source': 'places',
             'layout': {
-                'icon-image': 'park',
+                'icon-image': 'map-marker',
+                'icon-anchor': 'bottom',
                 'icon-allow-overlap': true
             }
         });
