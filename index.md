@@ -51,7 +51,7 @@ Cape Cod Trail Running is a guide to running and biking on the extensive trail n
             'type': 'symbol',
             'source': 'places',
             'layout': {
-                'icon-image': 'Trail-Sign-Outline--Streamline-Ionic-Outline',
+                'icon-image': 'map-marker',
                 'icon-allow-overlap': true
             }
         });
