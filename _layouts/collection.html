@@ -37,7 +37,7 @@ layout: default
                         'type': 'Feature',
                         'properties': {
                             'description':
-                                '<b>{{ trailhead.title }}</b><br>{{ trailhead.address }}(<a href="https://www.google.com/maps/search/?api=1&query={{ trailhead.lat }},{{ trailhead.lng }}">Directions</a>)'
+                                '<b><a href="{{ trailhead.url }}">{{ trailhead.title }}</a></b><br>{{ trailhead.address }}(<a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ trailhead.lat }},{{ trailhead.lng }}">Directions</a>)'
                         },
                         'geometry': {
                             'type': 'Point',
@@ -54,6 +54,7 @@ layout: default
             'source': 'places',
             'layout': {
                 'icon-image': 'map-marker',
+                'icon-anchor': 'bottom',
                 'icon-allow-overlap': true
             }
         });
