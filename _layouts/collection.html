@@ -10,7 +10,7 @@ layout: default
     const map = new mapboxgl.Map({
         container: 'map', 
         style: 'mapbox://styles/capecodtrailrunning/clwjdfr1y02q901qlcu0u4i5i',
-        center: [{{ page.lat }}, {{ page.lng }}], 
+        center: [{{ page.lng }}, {{ page.lat }}], 
         zoom: 
             {% if page.zoom %}
                 {{ page.zoom }}
