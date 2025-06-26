@@ -25,9 +25,32 @@ layout: default
 
     map.addControl(nav);
 
-    const marker1 = new mapboxgl.Marker({ color: 'black'})
-        .setLngLat([{{ page.lng }}, {{ page.lat }}])
-        .addTo(map);
+    map.on('load', () => {
+        map.addSource('places', {
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': [
+                    {
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [{{ page.lng }}, {{ page.lat }}]
+                        }
+                    },
+                ]
+            }
+        });
+        map.addLayer({
+            'id': 'places',
+            'type': 'symbol',
+            'source': 'places',
+            'layout': {
+                'icon-image': 'map-marker',
+                'icon-allow-overlap': true
+            }
+        });
+
+    });
 </script>
 
 {{ content }}
